@@ -4,10 +4,26 @@ public abstract class STRYDER extends Titan{
 	protected int salud;
 	protected int velocidad;
 	
-	public STRYDER (int tamano, int escudos,int salud , int velocidad) {
-		super(tamano, escudos);
+	public STRYDER (int tamano, int escudos,int salud , int velocidad, int numUnidad, String bando) {
+		super(tamano, escudos, numUnidad, bando);
 		this.salud = salud; 
 		this.escudos = escudos;
+	}
+	
+	public int getNumUnidad() {
+		return numUnidad;
+	}
+	
+	public void setNumUnidad(int numUnidad) {
+		this.numUnidad = numUnidad;
+	}
+	
+	public String getBando() {
+		return bando;
+	}
+	
+	public void setBando(String bando) {
+		this.bando = bando;
 	}
 
 	public int getSalud() {

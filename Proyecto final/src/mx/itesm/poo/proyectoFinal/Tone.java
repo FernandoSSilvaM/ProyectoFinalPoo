@@ -4,8 +4,8 @@ public class Tone extends OGRE{
 	
 	private double dano;
 
-	public Tone(int escudos, int tamano, int salud, int velocidad, double dano) {
-		super(escudos, tamano, salud, velocidad);
+	public Tone(int escudos, int tamano, int salud, int velocidad, double dano, int numUnidad, String bando) {
+		super(escudos, tamano, salud, velocidad, numUnidad, bando);
 		// TODO Auto-generated constructor stub
 		
 		this.dano = dano;

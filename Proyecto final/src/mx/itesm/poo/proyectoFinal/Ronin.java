@@ -3,8 +3,8 @@ package mx.itesm.poo.proyectoFinal;
 public class Ronin extends STRYDER{
 	private double dano;
 	
-	public Ronin(int tamano, int escudos, int velocidad, int salud,  double danos) {
-		super(tamano, escudos, velocidad, velocidad);
+	public Ronin(int tamano, int escudos, int velocidad, int salud,  double danos, int numUnidad, String bando) {
+		super(escudos, tamano, salud, velocidad, numUnidad, bando);
 		this.dano = dano;
 	}
 	

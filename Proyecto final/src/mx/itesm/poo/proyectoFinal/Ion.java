@@ -3,8 +3,8 @@ package mx.itesm.poo.proyectoFinal;
 public class Ion extends ATLAS{
 	private double dano;
 	
-	public Ion(int escudos, int tamano, int salud, int velocidad, double dano) {
-		super(escudos, tamano, salud, velocidad);
+	public Ion(int escudos, int tamano, int salud, int velocidad, double dano, int numUnidad, String bando) {
+		super(escudos, tamano, salud, velocidad, numUnidad, bando);
 		// TODO Auto-generated constructor st
 		this.dano= dano;
 	}

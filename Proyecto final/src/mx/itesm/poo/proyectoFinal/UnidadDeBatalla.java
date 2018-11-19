@@ -5,7 +5,6 @@ public abstract class UnidadDeBatalla {
 	int numUnidad = 0000;
 	String bando = "Milicia";
 	
-	//Constructores
 	public UnidadDeBatalla(int numID, String bando) {
 		this.numUnidad = numID;
 		this.bando = bando;
@@ -13,8 +12,6 @@ public abstract class UnidadDeBatalla {
 
 	public UnidadDeBatalla() {
 	}
-	
-	//Getters, Setters y toString
 
 	public int getNumUnidad() {
 		return numUnidad;

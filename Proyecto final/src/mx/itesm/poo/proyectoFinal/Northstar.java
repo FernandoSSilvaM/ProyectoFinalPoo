@@ -4,8 +4,8 @@ public class Northstar extends OGRE{
 	
 	private double dano;
 
-	public Northstar(int escudos, int tamano, int salud, int velocidad, double dano) {
-		super(escudos, tamano, salud, velocidad);
+	public Northstar(int escudos, int tamano, int salud, int velocidad, double dano, int numUnidad, String bando) {
+		super(escudos, tamano, salud, velocidad, numUnidad, bando);
 		// TODO Auto-generated constructor stub
 		
 		this.dano = dano;
