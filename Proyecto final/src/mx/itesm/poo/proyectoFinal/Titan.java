@@ -3,12 +3,18 @@ package mx.itesm.poo.proyectoFinal;
 public abstract class Titan extends UnidadDeBatalla {
 	protected int escudos;
 	protected int tamano;
-	//protected piloto Piloto;
+	protected Piloto piloto;
 
 	public Titan(int tamano , int escudos,int numUnidad, String bando ) {
 	super(numUnidad, bando);
 	this.tamano = tamano;
 	this.escudos = escudos;
+	}
+	
+	public Titan() {
+		super();
+		this.escudos= 100;
+		this.tamano = 10;
 	}
 	
 	public boolean aparecer(boolean solicitar) {
@@ -53,6 +59,14 @@ public abstract class Titan extends UnidadDeBatalla {
 
 	public void setTamano(int tamano) {
 		this.tamano = tamano;
+	}
+	
+	public Piloto getPiloto() {
+		return piloto;
+	}
+
+	public void setPiloto(Piloto piloto) {
+		this.piloto = piloto;
 	}
 	
 	@Override
