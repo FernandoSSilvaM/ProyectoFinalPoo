@@ -1,8 +1,8 @@
 package mx.itesm.poo.proyectoFinal;
 
-public class Infanteria extends UnidadDeBatalla {
+public abstract class Infanteria extends UnidadDeBatalla {
 	//Atributos
-	int vida = 100;
+	double vida = 100;
 	Arma arma = new Arma();
 	int velocidad= 1;
 	
@@ -55,12 +55,12 @@ public class Infanteria extends UnidadDeBatalla {
 	}
 	
 	//Getters, Setters y toString
-	public int getVida() {
+	public double getVida() {
 		return vida;
 	}
 
-	public void setVida(int vida) {
-		this.vida = vida;
+	public void setVida(double d) {
+		this.vida = d;
 	}
 
 	public Arma getArma() {

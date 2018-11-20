@@ -2,13 +2,16 @@ package mx.itesm.poo.proyectoFinal;
 
 public class Legion extends OGRE{
 	
-	private double dano;
+	private double dano = 20;
+	
+	public Legion(double dano, String bando, int escudos, int tamano, int numUnidad, Arma arma, int salud, int velocidad) {
+		super(bando, escudos, tamano, numUnidad, arma, salud, velocidad);
+		arma.setDano(dano);
+	}
 
-	public Legion(int escudos, int tamano, int salud, int velocidad, double dano, int numUnidad, String bando) {
-		super(escudos, tamano, salud, velocidad, numUnidad, bando);
-		// TODO Auto-generated constructor stub
-		
-		this.dano = dano;
+	public Legion() {
+		super();
+		arma.setDano(dano);
 	}
 	
 	public void escudoDeTorreta() {

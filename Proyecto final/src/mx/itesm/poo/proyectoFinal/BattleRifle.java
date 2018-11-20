@@ -2,7 +2,7 @@ package mx.itesm.poo.proyectoFinal;
 
 public class BattleRifle extends Piloto {
 	//Atributos
-	private Arma granada = new Arma(100.0, false, 30, new Mira());
+	private Arma granada = new Arma(100, false, 30, new Mira());
 
 	//Constructores
 	

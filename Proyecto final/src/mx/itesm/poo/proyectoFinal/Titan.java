@@ -1,11 +1,12 @@
 package mx.itesm.poo.proyectoFinal;
 
 public abstract class Titan extends UnidadDeBatalla {
-	protected int escudos;
+	protected double escudos;
 	protected int tamano;
 	protected Piloto piloto;
+	protected Arma arma = new Arma();
 
-	public Titan(int tamano , int escudos,int numUnidad, String bando ) {
+	public Titan(int tamano , int escudos,int numUnidad, String bando, Arma arma ) {
 	super(numUnidad, bando);
 	this.tamano = tamano;
 	this.escudos = escudos;
@@ -45,12 +46,12 @@ public abstract class Titan extends UnidadDeBatalla {
 		
 	}
 
-	public int getEscudos() {
+	public double getEscudos() {
 		return escudos;
 	}
 
-	public void setEscudos(int escudos) {
-		this.escudos = escudos;
+	public void setEscudos(double d) {
+		this.escudos = d;
 	}
 
 	public int getTamano() {
@@ -67,6 +68,14 @@ public abstract class Titan extends UnidadDeBatalla {
 
 	public void setPiloto(Piloto piloto) {
 		this.piloto = piloto;
+	}
+	
+	public Arma getArma() {
+		return arma;
+	}
+
+	public void setArma(Arma arma) {
+		this.arma = arma;
 	}
 	
 	@Override

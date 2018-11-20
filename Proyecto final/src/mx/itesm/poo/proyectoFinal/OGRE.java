@@ -1,13 +1,17 @@
 package mx.itesm.poo.proyectoFinal;
 
 public class OGRE extends Titan{
-	protected int salud;
-	protected int velocidad;
+	protected int salud = 300;
+	protected int velocidad = 2;
 	
-	public OGRE(int escudos, int tamano, int salud, int velocidad,int numUnidad, String bando) {
-		super(tamano, escudos, numUnidad, bando);
+	public OGRE(String bando, int escudos, int tamano, int numUnidad, Arma arma, int salud, int velocidad) {
+		super(tamano, escudos, numUnidad, bando, arma);
 		this.salud = salud;
 		this.velocidad = velocidad;
+	}
+	
+	public OGRE() {
+		super();
 	}
 	
 	public int getNumUnidad() {
