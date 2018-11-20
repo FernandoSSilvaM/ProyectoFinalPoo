@@ -4,8 +4,8 @@ public class ATLAS extends Titan{
 	protected int salud;
 	protected int velocidad;
 	
-	public ATLAS(int escudos, int tamano, int salud, int velocidad, int numUnidad, String bando) {
-		super(tamano, escudos, numUnidad, bando);
+	public ATLAS(int escudos, int tamano, int salud, int velocidad, int numUnidad, String bando, Arma arma) {
+		super(tamano, escudos, numUnidad, bando, arma);
 		this.salud = salud;
 		this.velocidad = velocidad;
 	}
