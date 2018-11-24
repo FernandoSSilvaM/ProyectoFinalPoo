@@ -6,14 +6,20 @@ public abstract class Piloto extends Infanteria {
 	protected Titan titan;
 	
 	//Constructores
-	public Piloto() {
-		super();
+	public Piloto(int numID, String bando, double salud, Arma arma, int idPiloto, Titan titan) {
+		super(numID, bando, salud, arma);
+		this.idPiloto = idPiloto;
+		this.titan = titan;
 	}
 
-	public Piloto(int vida, Arma arma, int velocidad, int numUnidad, String bando, int idPiloto, Titan titan) {
-		super(vida, arma, velocidad, numUnidad, bando);
-		this.titan = titan;
+	public Piloto(int idPiloto, Titan titan) {
+		super();
 		this.idPiloto = idPiloto;
+		this.titan = titan;
+	}
+
+	public Piloto() {
+		super();
 	}
 	
 	//Metodos Generales
@@ -37,15 +43,17 @@ public abstract class Piloto extends Infanteria {
 		}
 	}
 	
-	public void parkour() {
-		int velPar =  this.velocidad * 4;
-		System.out.println("Agilidad aumentada: " + velPar);
-	}
-	
 	public void llamarTitan() {
 		this.titan.aparecer(true);
 		System.out.println("Titan en camino.");
 	}
+	
+	
+	public abstract void parkour();
+	
+	public abstract void correr();
+	
+	public abstract void teleport();
 	
 	//Getters, Setters y toString
 	public int getIdPiloto() {
@@ -66,8 +74,10 @@ public abstract class Piloto extends Infanteria {
 
 	@Override
 	public String toString() {
-		return "Piloto [idPiloto=" + idPiloto + ", titan=" + titan + "]";
+		return "Piloto [idPiloto=" + idPiloto + ", titan=" + titan + ", arma=" + arma + ", numUnidad=" + numUnidad
+				+ ", bando=" + bando + ", salud=" + salud + "]";
 	}
+	
 	
 	
 	

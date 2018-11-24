@@ -2,25 +2,24 @@ package mx.itesm.poo.proyectoFinal;
 
 public abstract class Infanteria extends UnidadDeBatalla {
 	//Atributos
-	double vida = 100;
-	Arma arma = new Arma();
-	int velocidad= 1;
+	protected Arma arma = new Arma();
 	
 	//Constructores
-	
-	public Infanteria(int vida, Arma arma, int velocidad, int numUnidad, String bando) {
-		super(numUnidad, bando);
-		this.vida = vida;
+	public Infanteria(int numID, String bando, double salud, Arma arma) {
+		super();
 		this.arma = arma;
-		this.velocidad = velocidad;
 	}
 	
+	public Infanteria(Arma arma) {
+		super();
+		this.arma = arma;
+	}
+
 	public Infanteria() {
 		super();
 	}
 	
-	//Metodos Generales
-	
+	//Metodos Generales	
 	public boolean tomarArma(Arma arma) {
 		if(arma.isBoolTitan()) {
 			System.out.println("No puedo tomar esa arma!");
@@ -38,7 +37,7 @@ public abstract class Infanteria extends UnidadDeBatalla {
 	}
 	
 	public boolean morir() {
-		if(this.vida <= 0) {
+		if(this.salud <= 0) {
 			System.out.println("Estas muerto!");
 			this.aparecer();
 			return true;
@@ -49,20 +48,7 @@ public abstract class Infanteria extends UnidadDeBatalla {
 		}
 	}
 	
-	public void correr() {
-		int velocidadMax = 2*this.velocidad;
-		System.out.println("Estas corriendo a una velicidad" + velocidadMax);
-	}
-	
 	//Getters, Setters y toString
-	public double getVida() {
-		return vida;
-	}
-
-	public void setVida(double d) {
-		this.vida = d;
-	}
-
 	public Arma getArma() {
 		return arma;
 	}
@@ -71,17 +57,12 @@ public abstract class Infanteria extends UnidadDeBatalla {
 		this.arma = arma;
 	}
 
-	public int getVelocidad() {
-		return velocidad;
-	}
-
-	public void setVelocidad(int velocidad) {
-		this.velocidad = velocidad;
-	}
-
 	@Override
 	public String toString() {
-		return "Infanteria [vida=" + vida + ", arma=" + arma + ", velocidad=" + velocidad + "]";
+		return "Infanteria [arma=" + arma + ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
 	}
+	
+	
+	
 
 }

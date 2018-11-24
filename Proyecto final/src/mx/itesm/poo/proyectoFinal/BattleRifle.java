@@ -2,33 +2,69 @@ package mx.itesm.poo.proyectoFinal;
 
 public class BattleRifle extends Piloto {
 	//Atributos
-	private Arma granada = new Arma(100, false, 30, new Mira());
+	private int velocidad = 10;
 
 	//Constructores
+	public BattleRifle(int numID, String bando, double salud, Arma arma, int idPiloto, Titan titan, int velocidad) {
+		super(numID, bando, salud, arma, idPiloto, titan);
+		this.velocidad = velocidad;
+	}
+	
+	public BattleRifle(int velocidad) {
+		super();
+		this.velocidad = velocidad;
+	}
 	
 	public BattleRifle() {
-		super();
 	}
 
-	public BattleRifle(Arma granada, int vida, Arma arma, int velocidad, int numUnidad, String bando, int idPiloto, Titan titan) {
-		super(vida, arma, velocidad, numUnidad, bando, idPiloto, titan);
-		this.granada = granada;
+	//Metodos Heredados
+	@Override
+	public void parkour() {
+		double vel = this.velocidad * 2;
+		System.out.println("Modo Parkour activado, velocidoad= " + vel);
+	}
+
+	@Override
+	public void correr() {
+		double vel = this.velocidad * 1.5;
+		System.out.println("Corriendo a una velocidad= " + vel);
+	}
+
+	@Override
+	public void teleport() {
+		System.out.println("Moviendose a base en 6 segundos");
 	}
 	
-	//Getters, Setters, toString
-	public Arma getGranada() {
-		return granada;
+	//Metodos Generales
+	
+	public void cubrirse() {
+		System.out.println("Estas a cubierto");
 	}
 
-	public void setGranada(Arma granada) {
-		this.granada = granada;
+	//Getters, Setters y toString
+	public int getVelocidad() {
+		return velocidad;
+	}
+
+	public void setVelocidad(int velocidad) {
+		this.velocidad = velocidad;
 	}
 
 	@Override
 	public String toString() {
-		return "BattleRifle [granada=" + granada + "]";
+		return "BattleRifle [velocidad=" + velocidad + ", idPiloto=" + idPiloto + ", titan=" + titan + ", arma=" + arma
+				+ ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
 	}
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
 }
+	
