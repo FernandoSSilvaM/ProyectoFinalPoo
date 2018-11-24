@@ -26,27 +26,37 @@ public class Arma {
 		if(this.cargadorAhora > 0) {
 			this.cargadorAhora -= 1;
 			System.out.println("BANG!");
-			if(objetivo instanceof Titan) {
-				//Esto es reconoce a objetivo como clase "Titan" y usa el metodo setEscudos para bajarle la vida
-				//dependiendo si le dispara una infanteria o Titan.
-				if(this.boolTitan) {
-					((Titan) objetivo).setEscudos(((Titan) objetivo).getEscudos() - this.dano);
-					System.out.println("La salud del titan es" + ((Titan) objetivo).getEscudos());
-				
-				} else {
-					((Titan) objetivo).setEscudos(((Titan) objetivo).getEscudos() - (this.dano * 0.5));
-					System.out.println("La salud de la infanteria es" + ((Infanteria) objetivo).getVida());
-				}
-			
-			} if(objetivo instanceof Infanteria) {
-				if(this.boolTitan) {
-					((Infanteria) objetivo).setVida(((Infanteria) objetivo).getVida() - this.dano * 1.5);
+			if(objetivo instanceof Titan) { // Le disparo a un Titan?
+				if(this.boolTitan) {  //Soy un Titan
+					if(((Titan) objetivo).getEscudos() <= 0) { //Tiene escudos
+						objetivo.setSalud(objetivo.getSalud() - this.dano);
+						System.out.println("Daño a Titan sin escudos!!, su salud ahora es:" + objetivo.getSalud());
 					
-				} else {
-					((Infanteria) objetivo).setVida(((Infanteria) objetivo).getVida() - this.dano);
+					} else { //No tiene Escudos
+						((Titan) objetivo).setEscudos(((Titan) objetivo).getEscudos() - this.dano);
+						System.out.println("Daño al escudo del titan; escudo actual: " +((Titan) objetivo).getEscudos());
+					}
+					
+				} else { //No soy un Titan
+					if(((Titan) objetivo).getEscudos() <= 0) { //Tiene escudos
+						objetivo.setSalud(objetivo.getSalud() - this.dano * 0.5);
+						System.out.println("Daño a Titan sin escudos!!, su salud ahora es:" + objetivo.getSalud());
+					
+					} else { //No tiene escudos
+						((Titan) objetivo).setEscudos(((Titan) objetivo).getEscudos() - this.dano * 0.5);
+						System.out.println("Daño al escudo del titan; escudo actual: " +((Titan) objetivo).getEscudos());
+					}
 				}
 			
-			} else {
+			} if(objetivo instanceof Infanteria) { //Le disparo a una Infanteria?
+				if(this.boolTitan) { //soy un Titan
+					((Infanteria) objetivo).setSalud(((Infanteria) objetivo).getSalud() - this.dano * 2);
+					
+				} else { // No soy un titan
+					((Infanteria) objetivo).setSalud(((Infanteria) objetivo).getSalud() - this.dano);
+				}
+			
+			} else { // Deberia ser una excepcion, pero no quiero serlo :3
 				System.out.println("Que ostras eres?");
 			}
 			

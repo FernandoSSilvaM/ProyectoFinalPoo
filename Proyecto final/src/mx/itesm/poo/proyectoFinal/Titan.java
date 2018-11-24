@@ -1,15 +1,27 @@
 package mx.itesm.poo.proyectoFinal;
 
 public abstract class Titan extends UnidadDeBatalla {
+	//Atributos
 	protected double escudos;
 	protected int tamano;
 	protected Piloto piloto;
 	protected Arma arma = new Arma();
 
-	public Titan(int tamano , int escudos,int numUnidad, String bando, Arma arma ) {
-	super(numUnidad, bando);
-	this.tamano = tamano;
+	//Constructores
+	public Titan(int numID, String bando, double salud, double escudos, int tamano, Piloto piloto, Arma arma) {
+	super(numID, bando, salud);
 	this.escudos = escudos;
+	this.tamano = tamano;
+	this.piloto = piloto;
+	this.arma = arma;
+	}
+	
+	public Titan(double escudos, int tamano, Piloto piloto, Arma arma) {
+		super();
+		this.escudos = escudos;
+		this.tamano = tamano;
+		this.piloto = piloto;
+		this.arma = arma;
 	}
 	
 	public Titan() {
@@ -17,35 +29,48 @@ public abstract class Titan extends UnidadDeBatalla {
 		this.escudos= 100;
 		this.tamano = 10;
 	}
+
+	//Metodos Generales
 	
 	public boolean aparecer(boolean solicitar) {
-		if (solicitar == true) {
+		if (solicitar) {
 			return true;
 		}
 			else {
 				return false;
 			}
 		}
-	public void caminar() {
+	
+	public abstract void correr(int velocidad);
+	
+	public abstract void especial();
+	
+	
+	public boolean tomarArma(Arma arma) {
+		if(arma.isBoolTitan()) { //Es un arma de Titan?
+			System.out.println("Se cambio la arma: " + this.arma.toString() + "\n por: " + arma.toString());			
+			this.setArma(arma);
+			return true;
+			
+		} else {
+			System.out.println("No puedes tomar esa arma!");
+			return false;
+		}
+	}
+	public boolean desruirse() {
+		if(this.salud <= 0) {
+			System.out.println("Has sido destruido!");
+			return true;
 		
+		} else {
+			System.out.println("Puede seguir peleando.");
+			return false;
+		}
 	}
 	
-	public void tomarArma() {
-		
-	}
+	public abstract void autodestruirse();
 	
-	public void desruirse() {
-		
-	}
-	
-	public void autodestruirse() {
-		
-	}
-	
-	public void usarArma() {
-		
-	}
-
+	//Getters, Setters y toString
 	public double getEscudos() {
 		return escudos;
 	}
@@ -77,11 +102,13 @@ public abstract class Titan extends UnidadDeBatalla {
 	public void setArma(Arma arma) {
 		this.arma = arma;
 	}
-	
+
 	@Override
-	
 	public String toString() {
-		return "LA WEA COSMICA SEMICUANTICA";
+		return "Titan [escudos=" + escudos + ", tamano=" + tamano + ", piloto=" + piloto + ", arma=" + arma
+				+ ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
 	}
+	
+	
 }
 
