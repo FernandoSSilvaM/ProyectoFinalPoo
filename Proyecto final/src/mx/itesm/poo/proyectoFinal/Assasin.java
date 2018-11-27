@@ -44,7 +44,7 @@ public class Assasin extends Piloto implements Volador{
 
 	@Override
 	public void pisoton() {
-		System.out.println("Se raliza daño en radio de 2m");
+		System.out.println("Se raliza daï¿½o en radio de 2m");
 	}
 
 	@Override
@@ -55,7 +55,7 @@ public class Assasin extends Piloto implements Volador{
 	
 	//Metodos Generales
 	
-	public void apuñalar(Piloto objetivo) {
+	public void apunalar(Piloto objetivo) {
 		objetivo.setSalud(0);
 		System.out.println("Se mato al piloto: " + objetivo.getIdPiloto());
 	}
