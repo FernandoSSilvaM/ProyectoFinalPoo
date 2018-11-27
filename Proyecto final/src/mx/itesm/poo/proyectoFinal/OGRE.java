@@ -1,50 +1,49 @@
 package mx.itesm.poo.proyectoFinal;
 
-public abstract class OGRE extends Titan{
-	//Atributos
-	protected double fuerzaGolpe = 3;
-	protected int velocidad = 2;
+public class OGRE extends Titan{
 	
-	//Constructores
-	public OGRE(int numID, String bando, double salud, double escudos, int tamano, Piloto piloto, Arma arma, double fuerzaGolpe, int velocidad) {
-		super(numID, bando, salud, escudos, tamano, piloto, arma);
-		this.fuerzaGolpe = fuerzaGolpe;
+	protected int velocidad;
+	protected double fuerzaGolpe;
+	
+	public OGRE(int numUnidad, String bando, double salud, double escudos, 
+			int tamano, Piloto piloto, Arma arma, int velocidad, double fuerzaGolpe) {
+		
+		super(numUnidad, bando, salud, escudos, tamano, piloto, arma);
 		this.velocidad = velocidad;
+		this.fuerzaGolpe = fuerzaGolpe;
+		
+		
 	}
 	
-	public OGRE( double fuerzaGolpe, int velocidad) {
-		super();
-		this.fuerzaGolpe = fuerzaGolpe;
-		this.velocidad = velocidad;
-	}
-
+	
 	public OGRE() {
-		super();
+	
+		
 	}
 	
-	//Metodos Generales
-	public void golpear(UnidadDeBatalla objetivo) {
-		if(objetivo instanceof Titan) {
-			((Titan) objetivo).setEscudos(0);
-			objetivo.setSalud(objetivo.getSalud() - this.fuerzaGolpe);
-		}
-		
-		if(objetivo instanceof Infanteria) {
-			objetivo.setSalud(0);
-		}
-		
-		else {
-			System.out.println("SOY UN ERROR...  NO ME VEAS!");
-		}
+	
+	public int getNumUnidad() {
+		return numUnidad;
+	}
+	
+	public void setNumUnidad(int numUnidad) {
+		this.numUnidad = numUnidad;
+	}
+	
+	public String getBando() {
+		return bando;
+	}
+	
+	public void setBando(String bando) {
+		this.bando = bando;
+	}
+	
+	public double getSalud() {
+		return salud;
 	}
 
-	//Getters, Setters y toString
-	public double getFuerzaGolpe() {
-		return fuerzaGolpe;
-	}
-
-	public void setFuerzaGolpe(double fuerzaGolpe) {
-		this.fuerzaGolpe = fuerzaGolpe;
+	public void setSalud(int salud) {
+		this.salud = salud;
 	}
 
 	public int getVelocidad() {
@@ -54,13 +53,29 @@ public abstract class OGRE extends Titan{
 	public void setVelocidad(int velocidad) {
 		this.velocidad = velocidad;
 	}
+	
+	@Override
+	
+	public String toString() {
+		return "la wea mas cosmica gorda";
+	}
 
 	@Override
-	public String toString() {
-		return "OGRE [fuerzaGolpe=" + fuerzaGolpe + ", velocidad=" + velocidad + ", escudos=" + escudos + ", tamano="
-				+ tamano + ", piloto=" + piloto + ", arma=" + arma + ", numUnidad=" + numUnidad + ", bando=" + bando
-				+ ", salud=" + salud + "]";
+	public void correr(int velocidad) {
+		// TODO Auto-generated method stub
+		
 	}
-	
-	
+
+	@Override
+	public void especial() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void autodestruirse() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
