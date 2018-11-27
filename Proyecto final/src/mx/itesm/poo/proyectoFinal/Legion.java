@@ -1,61 +1,42 @@
 package mx.itesm.poo.proyectoFinal;
 
-public class Legion extends OGRE implements Volador{
-	//Atributos
-	private double escudoExtra = 150;
+public class Legion extends OGRE  implements Volador{
 	
-	//Constructores
-	public Legion(int numID, String bando, double salud, double escudos, int tamano, Piloto piloto, Arma arma,
-			double fuerzaGolpe, int velocidad, double escudoExtra) {
-		super(numID, bando, salud, escudos, tamano, piloto, arma, fuerzaGolpe, velocidad);
+	private double escudoExtra;
+
+	public Legion (int numUnidad, String bando, double salud, double escudos, 
+			int tamano, Piloto piloto, Arma arma, int velocidad, double fuerzaGolpe, double escudoExtra ) {
+		
+		super(numUnidad, bando, salud, escudos, tamano, piloto, arma,velocidad, fuerzaGolpe);
+		
+		// TODO Auto-generated constructor stub
+		
 		this.escudoExtra = escudoExtra;
+
 	}
 	
-	public Legion(double escudoExtra) {
+	//public Legion (int numUnidad, String bando, Piloto piloto) {
+	public Legion (int numUnidad, String bando) {
+		
 		super();
-		this.escudoExtra = escudoExtra;
+		
+		// TODO Auto-generated constructor stub
+		this.numUnidad = numUnidad;
+		this.bando = bando;
+		this.salud = 150;
+		this.escudos = 150;
+		this.tamano = 1000;
+		//this.piloto = piloto;
+		this.arma = arma;
+		this.velocidad = 100;
+		this.fuerzaGolpe = 25;
+		this.escudoExtra = 50;
+
+	}
+	public void escudoDeTorreta() {
+		System.out.println("Tienes Escudo de Torreta");
 	}
 	
-	public Legion() {
-		super();
-	}
-
-	//Metodos Heredados
-	@Override
-	public void correr(int velocidad) {
-		double vel = this.velocidad * 1.3;
-		System.out.println("Se esca corriendo a una velocidad: " + vel);
-	}
-
-	@Override
-	public void especial() {
-		setEscudos(getEscudos() + this.escudoExtra);
-		System.out.println("Activando habilidad especial: SUPER ARMOR \n Los escudos incrementan a:" + this.getEscudos());
-	}
-
-	@Override
-	public void autodestruirse() {
-		System.out.println("AutoDestruccion Legion: Creando barrera de fuego");
-	}
-	
-	//Metodos Interfase
-	@Override
-	public void volar() {
-		System.out.println("Elevandose a una velocidad: " + this.velocidad);
-	}
-
-	@Override
-	public void pisoton() {
-		System.out.println("Se raliza daño en radio de 10m");
-	}
-
-	@Override
-	public boolean apagarCoohete() {
-		System.out.println("Apagando cohete");
-		return true;
-	}
-
-	//Getters, Setters y toString
 	public double getEscudoExtra() {
 		return escudoExtra;
 	}
@@ -64,17 +45,26 @@ public class Legion extends OGRE implements Volador{
 		this.escudoExtra = escudoExtra;
 	}
 
-	@Override
 	public String toString() {
-		return "Legion [escudoExtra=" + escudoExtra + ", fuerzaGolpe=" + fuerzaGolpe + ", velocidad=" + velocidad
-				+ ", escudos=" + escudos + ", tamano=" + tamano + ", piloto=" + piloto + ", arma=" + arma
-				+ ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
+		return "La wea del gatling";
 	}
-	
-	
-	
-	
-	
-	
-	
+
+	@Override
+	public void volar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pisoton() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean apagarCoohete() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
