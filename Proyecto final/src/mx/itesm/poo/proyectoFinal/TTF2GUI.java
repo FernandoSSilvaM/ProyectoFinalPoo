@@ -7,10 +7,24 @@ public class TTF2GUI implements ActionListener, WindowListener{
 
 	public static void main(String[] args) {  
 		
+		/*
+		
 	Legion legion1 = new Legion (1, "Equipo1");
 	Legion legion2 = new Legion (2, "Equipo2");
 	
+	Assasin Assasin1 = new Assasin (3,3, "Equipo1");
+	Assasin Assasin2 = new Assasin (3,4, "Equipo2");
 	
+	BattleRifle BattleRifle1 = new BattleRifle(2,5, "Equipo1");
+	BattleRifle BattleRifle2 = new BattleRifle(2,6,"Equipo2");
+	
+	*/
+	
+	GUI GUI = new GUI();
+	
+	//	GUI.INTRODUCCION();   
+	
+		GUI.BOTONES();
     /*
 	JOptionPane.showMessageDialog( null, "Bienvenido a \n TITANFALL 2:" );
     
@@ -19,6 +33,8 @@ public class TTF2GUI implements ActionListener, WindowListener{
     JOptionPane.showMessageDialog( null, "REGLA 2 \n Cada jugador elige un ataque por turno." );
     JOptionPane.showMessageDialog( null, "REGLA 3 \n Gana el ultimo superviviente." );
 	*/
+	
+	/*
 	
 
 
@@ -135,7 +151,8 @@ JButton correrLegion2=new JButton("CORRER");//creating instance of JButton
 			System.out.println("CORRER LEGION2");
 		}
 	});
-JButton tomarArmaLegion2=new JButton("TOMAR ARMA");//creating instance of JButton  
+JButton tomarArmaLe
+gion2=new JButton("TOMAR ARMA");//creating instance of JButton  
 	tomarArmaLegion2.setBounds(500,540,150, 40);//x axis, y axis, width, height  
 	tomarArmaLegion2.addActionListener(new ActionListener() {
 		
@@ -360,12 +377,16 @@ f.add(battleRifleTeleport2);
 
 f.add(labelBattleRifle12);
 
-
+Blanco Equipo Enemigo 
 
 f.setSize(1920,1080);//400 width and 500 height  
 f.setLayout(null);//using no layout managers  
 f.setVisible(true);//making the frame visible  
 
+
+
+
+	*/
 
 	}
 

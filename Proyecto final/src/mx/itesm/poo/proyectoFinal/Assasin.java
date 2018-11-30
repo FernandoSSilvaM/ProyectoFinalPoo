@@ -10,13 +10,14 @@ public class Assasin extends Piloto implements Volador{
 		this.velocidad = velocidad;
 	}
 	
-	public Assasin(int velocidad) {
+	public Assasin(int velocidad,int numID, String bando) {
 		super();
 		this.velocidad = velocidad;
+		this.numUnidad = numID;
+		this.bando = bando;
 	}
 	
-	public Assasin() {
-	}
+	
 
 	//Metodos Heredados
 	@Override

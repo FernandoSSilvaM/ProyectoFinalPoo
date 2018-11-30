@@ -10,9 +10,11 @@ public class BattleRifle extends Piloto {
 		this.velocidad = velocidad;
 	}
 	
-	public BattleRifle(int velocidad) {
+	public BattleRifle(int velocidad, int numUnidad, String bando) {
 		super();
 		this.velocidad = velocidad;
+		this.numUnidad = numUnidad;
+		this.bando = bando;
 	}
 	
 	public BattleRifle() {

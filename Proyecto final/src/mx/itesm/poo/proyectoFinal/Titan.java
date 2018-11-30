@@ -43,6 +43,7 @@ public abstract class Titan extends UnidadDeBatalla {
 	
 	public abstract void correr(int velocidad);
 	
+	
 	public abstract void especial();
 	
 	
