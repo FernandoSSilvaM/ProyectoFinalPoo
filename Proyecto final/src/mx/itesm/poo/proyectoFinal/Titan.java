@@ -4,15 +4,13 @@ public abstract class Titan extends UnidadDeBatalla {
 	//Atributos
 	protected double escudos;
 	protected int tamano;
-	protected Piloto piloto;
 	protected Arma arma = new Arma();
 
 	//Constructores
-	public Titan(int numID, String bando, double salud, double escudos, int tamano, Piloto piloto, Arma arma) {
+	public Titan(int numID, String bando, double salud, double escudos, int tamano, Arma arma) {
 	super(numID, bando, salud);
 	this.escudos = escudos;
 	this.tamano = tamano;
-	this.piloto = piloto;
 	this.arma = arma;
 	}
 	
@@ -20,7 +18,6 @@ public abstract class Titan extends UnidadDeBatalla {
 		super();
 		this.escudos = escudos;
 		this.tamano = tamano;
-		this.piloto = piloto;
 		this.arma = arma;
 	}
 	
@@ -41,7 +38,7 @@ public abstract class Titan extends UnidadDeBatalla {
 			}
 		}
 	
-	public abstract void correr(int velocidad);
+	public abstract void correr();
 	
 	
 	public abstract void especial();
@@ -88,14 +85,6 @@ public abstract class Titan extends UnidadDeBatalla {
 		this.tamano = tamano;
 	}
 	
-	public Piloto getPiloto() {
-		return piloto;
-	}
-
-	public void setPiloto(Piloto piloto) {
-		this.piloto = piloto;
-	}
-	
 	public Arma getArma() {
 		return arma;
 	}
@@ -106,7 +95,7 @@ public abstract class Titan extends UnidadDeBatalla {
 
 	@Override
 	public String toString() {
-		return "Titan [escudos=" + escudos + ", tamano=" + tamano + ", piloto=" + piloto + ", arma=" + arma
+		return "Titan [escudos=" + escudos + ", tamano=" + tamano  + ", arma=" + arma
 				+ ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
 	}
 	

@@ -17,8 +17,15 @@ public class BattleRifle extends Piloto {
 		this.bando = bando;
 	}
 	
-	public BattleRifle() {
+	public BattleRifle(int velocidad) {
+		super();
+		this.velocidad = velocidad;
 	}
+	
+	public BattleRifle() {
+		super();
+	}
+	
 
 	//Metodos Heredados
 	@Override
@@ -53,10 +60,9 @@ public class BattleRifle extends Piloto {
 		this.velocidad = velocidad;
 	}
 
-	@Override
 	public String toString() {
-		return "BattleRifle [velocidad=" + velocidad + ", idPiloto=" + idPiloto + ", titan=" + titan + ", arma=" + arma
-				+ ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
+		return "BattleRifle [velocidad= " + velocidad + ", idPiloto= " + idPiloto + ", numUnidad= " + numUnidad + ", bando= " + bando + ", salud= " + salud + 
+				",\n    ARMAinf= " + arma + ",\n    TITAN= " + titan +  "] ";
 	}
 	
 	

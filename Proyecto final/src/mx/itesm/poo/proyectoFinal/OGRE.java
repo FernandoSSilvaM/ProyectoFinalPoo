@@ -1,51 +1,47 @@
 package mx.itesm.poo.proyectoFinal;
 
-public class OGRE extends Titan{
+public abstract class OGRE extends Titan{
 	
-	protected int velocidad;
-	protected double fuerzaGolpe;
+	//Atributos
+	protected int velocidad = 20;
+	protected double fuerzaGolpe = 10;
 	
+	//Constructores
 	public OGRE(int numUnidad, String bando, double salud, double escudos, 
 			int tamano, Piloto piloto, Arma arma, int velocidad, double fuerzaGolpe) {
 		
-		super(numUnidad, bando, salud, escudos, tamano, piloto, arma);
+		super(numUnidad, bando, salud, escudos, tamano, arma);
 		this.velocidad = velocidad;
+		this.fuerzaGolpe = fuerzaGolpe;	
+	}
+	
+	public OGRE( double fuerzaGolpe, int velocidad) {
+		super();
 		this.fuerzaGolpe = fuerzaGolpe;
-		
-		
+		this.velocidad = velocidad;
 	}
 	
 	
 	public OGRE() {
+		super();
+	}
 	
+	
+	//Metodos Generales
+	
+	public void golpear(UnidadDeBatalla objetivo) {
+		if(objetivo instanceof Titan) {
+			((Titan) objetivo).setEscudos(0);
+			objetivo.setSalud(objetivo.getSalud() - this.fuerzaGolpe);
+		}
+		
+		if(objetivo instanceof Infanteria) {
+			objetivo.setSalud(0);
+		}
 		
 	}
-	
-	
-	public int getNumUnidad() {
-		return numUnidad;
-	}
-	
-	public void setNumUnidad(int numUnidad) {
-		this.numUnidad = numUnidad;
-	}
-	
-	public String getBando() {
-		return bando;
-	}
-	
-	public void setBando(String bando) {
-		this.bando = bando;
-	}
-	
-	public double getSalud() {
-		return salud;
-	}
 
-	public void setSalud(int salud) {
-		this.salud = salud;
-	}
-
+	//Getters, Setters y toString
 	public int getVelocidad() {
 		return velocidad;
 	}
@@ -53,29 +49,22 @@ public class OGRE extends Titan{
 	public void setVelocidad(int velocidad) {
 		this.velocidad = velocidad;
 	}
+
+	public double getFuerzaGolpe() {
+		return fuerzaGolpe;
+	}
+
+	public void setFuerzaGolpe(double fuerzaGolpe) {
+		this.fuerzaGolpe = fuerzaGolpe;
+	}
 	
 	@Override
-	
 	public String toString() {
-		return "la wea mas cosmica gorda";
+		return "OGRE [velocidad=" + velocidad + ", fuerzaGolpe=" + fuerzaGolpe + ", escudos=" + escudos + ", tamano="
+				+ tamano + ", arma=" + arma + ", numUnidad=" + numUnidad + ", bando=" + bando
+				+ ", salud=" + salud + "]";
 	}
-
-	@Override
-	public void correr(int velocidad) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void especial() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void autodestruirse() {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
 
 }

@@ -14,6 +14,7 @@ public class Cristal {
 		this.grosor = grosor;
 	}
 
+	//Getters, Setters y toString
 	public String getColor() {
 		return color;
 	}
@@ -29,8 +30,13 @@ public class Cristal {
 	public void setGrosor(int grosor) {
 		this.grosor = grosor;
 	}
+
+	@Override
+	public String toString() {
+		return " | Cristal [color= " + color + ", grosor= " + grosor + "] ";
+	}
 	
-	//Getters, Setters y toString
+	
 	
 
 }

@@ -67,7 +67,7 @@ public class Mira {
 
 	@Override
 	public String toString() {
-		return "Mira [cristal=" + cristal + ", zoom=" + zoom + ", IR=" + IR + "]";
+		return " | Mira [zoom= " + zoom + ", IR= " + IR +  ", CRISTAL= " + cristal + "] ";
 	}
 	
 	

@@ -17,6 +17,7 @@ public abstract class Infanteria extends UnidadDeBatalla {
 
 	public Infanteria() {
 		super();
+		this.arma.setBoolTitan(false);
 	}
 	
 	//Metodos Generales	

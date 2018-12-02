@@ -2,7 +2,7 @@ package mx.itesm.poo.proyectoFinal;
 
 public class Arma {
 	//Atributos
-	private int dano =  1;
+	private int dano =  15;
 	private boolean boolTitan = true;
 	private int cargadorMax = 10;
 	private int cargadorAhora = this.cargadorMax;
@@ -56,10 +56,12 @@ public class Arma {
 					((Infanteria) objetivo).setSalud(((Infanteria) objetivo).getSalud() - this.dano);
 				}
 			
+				/*
 			} else { // Deberia ser una excepcion, pero no quiero serlo :3
 				System.out.println("Que ostras eres?");
 			}
-			
+			*/
+			}
 			return true;
 		
 		} else {
@@ -125,8 +127,8 @@ public class Arma {
 
 	@Override
 	public String toString() {
-		return "Arma [daño=" + dano + ", boolTitan=" + boolTitan + ", cargadorAhora=" + cargadorAhora + ", cargadorMax="
-				+ cargadorMax + ", mira=" + mira + "]";
+		return " | Arma [daño= " + dano + ", boolTitan= " + boolTitan + ", cargadorAhora= " + cargadorAhora + ", cargadorMax= "
+				+ cargadorMax + ", MIRA= " + mira + "] ";
 	}
 	
 	

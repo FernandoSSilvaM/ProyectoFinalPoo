@@ -17,6 +17,11 @@ public class Assasin extends Piloto implements Volador{
 		this.bando = bando;
 	}
 	
+	public Assasin(int velocidad) {
+		super();
+		this.velocidad = velocidad;
+	}
+	
 	
 
 	//Metodos Heredados
@@ -45,7 +50,7 @@ public class Assasin extends Piloto implements Volador{
 
 	@Override
 	public void pisoton() {
-		System.out.println("Se raliza da�o en radio de 2m");
+		System.out.println("Se raliza danio en radio de 2m");
 	}
 
 	@Override
@@ -72,8 +77,8 @@ public class Assasin extends Piloto implements Volador{
 
 	@Override
 	public String toString() {
-		return "Assasin [velocidad=" + velocidad + ", idPiloto=" + idPiloto + ", titan=" + titan + ", arma=" + arma
-				+ ", numUnidad=" + numUnidad + ", bando=" + bando + ", salud=" + salud + "]";
+		return "Assasin [velocidad= " + velocidad + ", idPiloto= " + idPiloto + ", numUnidad= " + numUnidad + ", bando= " + bando + ", salud= " + salud + 
+				",\n    ARMAinf= " + arma + ",\n    TITAN= " + titan +  "] ";
 	}
 
 

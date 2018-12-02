@@ -3,7 +3,7 @@ package mx.itesm.poo.proyectoFinal;
 public abstract class Piloto extends Infanteria {
 	//Atributos
 	protected int idPiloto = 00;
-	protected Titan titan;
+	protected Titan titan = null;
 	
 	//Constructores
 	public Piloto(int numID, String bando, double salud, Arma arma, int idPiloto, Titan titan) {
@@ -23,9 +23,8 @@ public abstract class Piloto extends Infanteria {
 	}
 	
 	//Metodos Generales
-	public boolean ingresarTitan(boolean hayTitan, Titan titan) {
+	public boolean ingresarTitan(boolean hayTitan) {
 		if(hayTitan) {
-			titan.setPiloto(this);
 			return true;
 		
 		} else {
@@ -44,8 +43,13 @@ public abstract class Piloto extends Infanteria {
 	}
 	
 	public void llamarTitan() {
+		if(titan == null) {
+			System.out.println("No tienes un titan!");
+
+		} else {
 		this.titan.aparecer(true);
 		System.out.println("Titan en camino.");
+		}
 	}
 	
 	
