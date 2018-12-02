@@ -5,12 +5,11 @@ public class Arma {
 	private int dano =  15;
 	private boolean boolTitan = true;
 	private int cargadorMax = 10;
-	private int cargadorAhora = this.cargadorMax;
+	private int cargadorAhora = 0;
 	private Mira mira = new Mira();
 	
-	//Constructores ¿
+	//Constructores 
 	public Arma() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Arma(int dano, boolean boolTitan, int cargadorMax, Mira mira) {
@@ -23,7 +22,7 @@ public class Arma {
 	//Metodos Generales
 	public boolean disparar(UnidadDeBatalla objetivo) {
 		
-		if(this.cargadorAhora > 0) {
+		if(this.cargadorAhora > 0) { //Tengo Balas?
 			this.cargadorAhora -= 1;
 			System.out.println("BANG!");
 			if(objetivo instanceof Titan) { // Le disparo a un Titan?
@@ -56,15 +55,10 @@ public class Arma {
 					((Infanteria) objetivo).setSalud(((Infanteria) objetivo).getSalud() - this.dano);
 				}
 			
-				/*
-			} else { // Deberia ser una excepcion, pero no quiero serlo :3
-				System.out.println("Que ostras eres?");
-			}
-			*/
 			}
 			return true;
 		
-		} else {
+		} else { //No tengo Balas
 			System.out.println("Sin balas!");
 			return false;
 		}

@@ -8,8 +8,8 @@ public class TF2_Test {
 		Assasin assasin1 = new Assasin(1010, "POO",100, new Arma(), 95, legion1, 20 );
 		BattleRifle battleRifle2 = new BattleRifle();
 		battleRifle2.setIdPiloto(11);
-	    Arma armaSueloInf = new Arma(30, false, 100, new Mira(new Cristal("Amarillo", 2), 0.0, false));
-	    Arma armasueloTitan = new Arma(100, true, 5, new Mira());
+	    Arma armaSueloInf = new Arma(30, false, 100, new Mira(new Cristal("Amarillo", 2), 0.0, true));
+	    Arma armaSueloTitan = new Arma(100, true, 5, new Mira());
 		
 		assasin1.setTitan((Titan) legion1);
 
@@ -23,7 +23,7 @@ public class TF2_Test {
 		System.out.println("\n----Tomar arma----");
 		assasin1.tomarArma(armaSueloInf);
 		System.out.println(assasin1.getArma());
-		battleRifle2.tomarArma(armasueloTitan);
+		battleRifle2.tomarArma(armaSueloTitan);
 		
 		System.out.println("\n----Aparecer----");
 		battleRifle2.aparecer();
@@ -82,7 +82,7 @@ public class TF2_Test {
 		
 		System.out.println("\n----Tomar Arma----");
 		legion1.tomarArma(armaSueloInf);
-		legion1.tomarArma(armasueloTitan);
+		legion1.tomarArma(armaSueloTitan);
 		
 		System.out.println("\n----Destruirse y Autodestruirse----");
 		legion1.desruirse();
@@ -103,14 +103,18 @@ public class TF2_Test {
 		System.out.println("\n----Recargar----");
 		System.out.println(assasin1.arma.recargar());
 		assasin1.arma.recargar();
+		battleRifle2.arma.recargar();
 		
 		System.out.println("\n---Disparar----");
 		System.out.println("Un piloto le dispara a un titan\nVida inicial de Titan: " + legion1.getSalud());
-		assasin1.arma.disparar(legion1);
-		System.out.println("Un piloto le dispara a otro\n Vida inicial de piloto: " + assasin1.getSalud());
-		battleRifle2.arma.disparar(assasin1);
+		assasin1.arma.disparar((UnidadDeBatalla)legion1);
+		System.out.println("Un piloto le dispara a otro\nVida inicial de piloto: " + assasin1.getSalud());
+		battleRifle2.arma.disparar((UnidadDeBatalla)assasin1);
 		System.out.println("Vida final: " + assasin1.getSalud());
 		
+		System.out.println("\nProbando metodos de Mira");
+		armaSueloTitan.getMira().hacerZoom();
+		armaSueloInf.getMira().prenderIR();
 		
 	
 		
