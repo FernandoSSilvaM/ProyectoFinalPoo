@@ -72,7 +72,7 @@ public class TF2_Test {
 		System.out.println("\nProbando Metodos de Titan");
 		
 		System.out.println("\n----Aparecer----");
-		System.out.println(legion1.aparecer(false));
+		System.out.println(legion1.aparecer());
 		
 		System.out.println("\n----Correr----");
 		legion1.correr();
@@ -106,9 +106,9 @@ public class TF2_Test {
 		battleRifle2.arma.recargar();
 		
 		System.out.println("\n---Disparar----");
-		System.out.println("Un piloto le dispara a un titan\nVida inicial de Titan: " + legion1.getSalud());
-		assasin1.arma.disparar((UnidadDeBatalla)legion1);
-		System.out.println("Un piloto le dispara a otro\nVida inicial de piloto: " + assasin1.getSalud());
+		System.out.println("Un piloto le dispara a un titan\nEscudos inicial de Titan: " + legion2.getEscudos());
+		assasin1.arma.disparar((UnidadDeBatalla)legion2);
+		System.out.println("\nUn piloto le dispara a otro\nVida inicial de piloto: " + assasin1.getSalud());
 		battleRifle2.arma.disparar((UnidadDeBatalla)assasin1);
 		System.out.println("Vida final: " + assasin1.getSalud());
 		

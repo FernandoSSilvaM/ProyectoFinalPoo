@@ -46,6 +46,8 @@ public class Legion extends OGRE  implements Volador{
 	@Override
 	public void autodestruirse() {
 		System.out.println("Autodestruccion Legion: Crando pared de humo.");
+		this.setSalud(0);
+		this.setEscudos(0);
 		
 	}
 	

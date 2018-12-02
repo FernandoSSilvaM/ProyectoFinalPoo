@@ -14,7 +14,7 @@ public abstract class Titan extends UnidadDeBatalla {
 	this.arma = arma;
 	}
 	
-	public Titan(double escudos, int tamano, Piloto piloto, Arma arma) {
+	public Titan(double escudos, int tamano, Arma arma) {
 		super();
 		this.escudos = escudos;
 		this.tamano = tamano;
@@ -29,13 +29,9 @@ public abstract class Titan extends UnidadDeBatalla {
 
 	//Metodos Generales
 	
-	public boolean aparecer(boolean solicitar) {
-		if (solicitar) {
-			return true;
-		}
-			else {
-				return false;
-			}
+	public boolean aparecer() {
+		System.out.println("Creando titan...");
+		return true;
 		}
 	
 	public abstract void correr();

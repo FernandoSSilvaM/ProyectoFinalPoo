@@ -15,7 +15,7 @@ public class Mira {
 	public Mira(Cristal cristal, double zoom, boolean iR) {
 		this.cristal = cristal;
 		this.zoom = zoom;
-		IR = iR;
+		this.IR = iR;
 	}
 
 	//Metodos Generales

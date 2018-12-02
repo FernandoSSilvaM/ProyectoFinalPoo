@@ -47,7 +47,7 @@ public abstract class Piloto extends Infanteria {
 			System.out.println("No tienes un titan!");
 
 		} else {
-		this.titan.aparecer(true);
+		this.titan.aparecer();
 		System.out.println("Titan en camino.");
 		}
 	}
