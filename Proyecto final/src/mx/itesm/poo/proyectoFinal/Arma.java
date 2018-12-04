@@ -1,3 +1,6 @@
+//Oscar Zuñiga Lara A01654827
+//Fernando Sebastian Silva Miramontes
+
 package mx.itesm.poo.proyectoFinal;
 
 public class Arma {

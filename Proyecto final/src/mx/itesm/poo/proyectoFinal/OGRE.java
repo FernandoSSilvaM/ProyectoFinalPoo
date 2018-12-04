@@ -8,7 +8,7 @@ public abstract class OGRE extends Titan{
 	
 	//Constructores
 	public OGRE(int numUnidad, String bando, double salud, double escudos, 
-			int tamano, Piloto piloto, Arma arma, int velocidad, double fuerzaGolpe) {
+			int tamano, Arma arma, int velocidad, double fuerzaGolpe) {
 		
 		super(numUnidad, bando, salud, escudos, tamano, arma);
 		this.velocidad = velocidad;

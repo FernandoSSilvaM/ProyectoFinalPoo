@@ -7,25 +7,25 @@ public class Legion extends OGRE  implements Volador{
 
 	//Constructores
 	public Legion (int numUnidad, String bando, double salud, double escudos, 
-			int tamano, Piloto piloto, Arma arma, int velocidad, double fuerzaGolpe, double escudoExtra ) {	
+			int tamano, Arma arma, int velocidad, double fuerzaGolpe, double escudoExtra ) {	
 		
-		super(numUnidad, bando, salud, escudos, tamano, piloto, arma,velocidad, fuerzaGolpe);
+		super(numUnidad, bando, salud, escudos, tamano, arma,velocidad, fuerzaGolpe);
 		this.escudoExtra = escudoExtra;
 	}
 	
 	
 	public Legion (int numUnidad, String bando) {
-		super(numUnidad, bando, 150, 150, 1000, null, new Arma(), 100, 25);
+		super(numUnidad, bando, 150, 150, 1000, new Arma(), 100, 25);
 	}
 	
 	
 	public Legion(double escudoExt) {
-		super( 00, "Milicia", 150, 150, 1000, null, new Arma(), 100, 25);
+		super( 00, "Milicia", 150, 150, 1000, new Arma(), 100, 25);
 		this.escudoExtra = escudoExt;
 	}
 	
 	public Legion() {
-		super( 00, "Milicia", 150, 150, 1000, null, new Arma(), 100, 25);
+		super( 00, "Milicia", 150, 150, 1000, new Arma(), 100, 25);
 	}
 	
 	//Metodos Generales

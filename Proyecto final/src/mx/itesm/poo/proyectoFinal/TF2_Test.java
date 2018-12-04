@@ -3,10 +3,10 @@ package mx.itesm.poo.proyectoFinal;
 public class TF2_Test {
 	
 	public static void main (String[] args) {
-		Legion legion1 = new Legion();
+		Legion legion1 = new Legion(1450,"Guerreros Rojos",300,400,2000, new Arma(), 250, 1000, 6952);
 		Legion legion2 = new Legion(300);
 		Assasin assasin1 = new Assasin(1010, "POO",100, new Arma(), 95, legion1, 20 );
-		BattleRifle battleRifle2 = new BattleRifle();
+		BattleRifle battleRifle2 = new BattleRifle(25);
 		battleRifle2.setIdPiloto(11);
 	    Arma armaSueloInf = new Arma(30, false, 100, new Mira(new Cristal("Amarillo", 2), 0.0, true));
 	    Arma armaSueloTitan = new Arma(100, true, 5, new Mira());
@@ -106,10 +106,12 @@ public class TF2_Test {
 		battleRifle2.arma.recargar();
 		
 		System.out.println("\n---Disparar----");
-		System.out.println("Un piloto le dispara a un titan\nEscudos inicial de Titan: " + legion2.getEscudos());
+		legion2.setEscudos(0);
+		System.out.println("Un piloto le dispara a un titan sin escudos\nSalud inicial de Titan: " + legion2.getSalud());
 		assasin1.arma.disparar((UnidadDeBatalla)legion2);
-		System.out.println("\nUn piloto le dispara a otro\nVida inicial de piloto: " + assasin1.getSalud());
-		battleRifle2.arma.disparar((UnidadDeBatalla)assasin1);
+		System.out.println("\nUn Titan le dispara a un piloto\nVida inicial de piloto: " + assasin1.getSalud());
+		legion2.arma.recargar();
+		legion2.arma.disparar((UnidadDeBatalla)assasin1);
 		System.out.println("Vida final: " + assasin1.getSalud());
 		
 		System.out.println("\nProbando metodos de Mira");
